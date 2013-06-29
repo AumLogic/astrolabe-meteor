@@ -1,6 +1,6 @@
-function dashboard () {
-  console.log('aoenuthaoenuthoe');
-  console.log(123 + 123);
-}
+window && (window.dashboard = dash)
 
-module.exports = dashboard;
+function dash() {
+  document.body.html = '';
+  console.log('test');
+}
