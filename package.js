@@ -1,6 +1,5 @@
 Package.describe({
-  summary: "Tells you which queries and subscriptions are slow.",
-  internal: true
+  summary: "Tells you which queries and subscriptions are slow."
 });
 
 Package.on_use(function (api, where) {
