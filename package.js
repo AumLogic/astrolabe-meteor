@@ -2,12 +2,10 @@ Package.describe({
   summary: "Tells you which queries and subscriptions are slow."
 });
 
-Package.on_use(function (api, where) {
-  where = where || ['client', 'server'];
-
-  api.use('d3', where);
-  api.use('underscore', where);
-  api.add_files(['profiler.js', 'dashboard.js'], where);
+Package.on_use(function (api) {
+  api.use('d3', ['client']);
+  api.add_files(['dashboard.js'], ['client']);
+  api.add_files(['profiler.js'], ['server']);
 });
 
 Package.on_test(function (api) {
