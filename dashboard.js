@@ -1,4 +1,4 @@
-window && (window.dashboard = dash)
+dashboard = dash
 
 function dash() {
   document.body.html = '';
