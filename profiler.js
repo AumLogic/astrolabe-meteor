@@ -1,3 +1,5 @@
+var Clouseau = Npm.require('clouseau');
+
 var Profiler = {
   mongoProfile: function() {
     var MongoDB = Npm.require('mongodb');

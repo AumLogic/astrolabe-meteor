@@ -2,6 +2,10 @@ Package.describe({
   summary: "Tells you which queries and subscriptions are slow."
 });
 
+Npm.depends({
+  "clouseau": "0.1.x"
+});
+
 Package.on_use(function (api) {
   api.use('bootstrap', ['client']);
   api.use('d3', ['client']);
