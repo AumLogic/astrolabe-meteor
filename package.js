@@ -3,7 +3,7 @@ Package.describe({
 });
 
 Npm.depends({
-  "clouseau": "0.1.x"
+  "clouseau": "0.1.4"
 });
 
 Package.on_use(function (api) {
