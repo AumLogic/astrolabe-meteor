@@ -575,4 +575,11 @@ function dash() {
       ~~ (data.totalmem / 1e6) + 'mb'
     d3.select('body').append('div').text(text)
   })
+
+
+
+  Meteor.call('mongoProfile', function (err, data) {
+    console.log('abc' + data)
+  })
+
 }

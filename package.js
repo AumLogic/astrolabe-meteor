@@ -3,8 +3,9 @@ Package.describe({
 });
 
 Npm.depends({
-  "clouseau": "0.1.4"
-});
+  "clouseau": "0.1.4",
+  mongodb: '1.3.10'
+})
 
 Package.on_use(function (api) {
   api.use('bootstrap', ['client']);
