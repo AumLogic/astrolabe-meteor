@@ -4,7 +4,7 @@ var exec = Npm.require('child_process').exec;
 
 Meteor.setTimeout(function x() {
   var url = MONGO_URL.replace('mongodb://', '');
-  exec('echo "db.setProfilingLevel(2)" | mongo ' + url)
+  exec('echo "db.setProfilingLevel(2)" | meteor mongo ' + url)
 
 }, 5000)
 
@@ -35,7 +35,7 @@ var Profiler = {
             ret.count = 0
             return ret
           })
-          .sort(function (a, b) { return b.responseLength - a.responseLength })
+          .sort(function (a, b) { return b.time - a.time })
           .forEach(function (d, i, obj) {
             var pred = existing(d, ret)
             if (! pred) return (ret.push(d))
@@ -44,7 +44,7 @@ var Profiler = {
             pred.waited += d.waited
             pred.responseLength += d.responseLength
           })
-        return fut.ret(JSON.stringify(ret))
+        return fut.ret(JSON.stringify(ret.sort(function (a, b) { return b.time - a.time })))
       });
     });
 
@@ -59,8 +59,6 @@ function existing(a, collection){
   return _.find(collection,
                 function (b) { return a.ns === b.ns && a.op === b.op })
 }
-
-
 
 __meteor_bootstrap__.app
 .use(function (req, res, next) {

@@ -12,8 +12,11 @@ Npm.depends({
 Package.on_use(function (api) {
   api.use('bootstrap', ['client']);
   api.use('d3', ['client']);
+
+  api.add_files(['topojson.js'], ['client']);
   api.add_files(['dashboard.js'], ['client']);
   api.add_files(['shared.js'], ['server', 'client']);
+  api.add_files(['world.js'], ['client']);
   api.add_files(['os.js'], ['server']);
   api.add_files(['profiler.js'], ['server']);
 });
